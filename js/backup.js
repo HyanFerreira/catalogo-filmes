@@ -113,6 +113,103 @@ definirBackgroundInicial();
 
 
 
+// barra de pesquisa
+// Obtém a referência para o elemento de input da barra de pesquisa
+const searchBar = document.getElementById('search-bar');
+
+// Obtém a referência para a div onde os filmes serão exibidos
+const filmesDiv = document.getElementById('filmes-div');
+
+// Função para atualizar a exibição dos filmes com base no valor de pesquisa
+function atualizarFilmes() {
+  // Obtém o valor digitado na barra de pesquisa
+  const searchTerm = searchBar.value.toLowerCase();
+
+  // Verifica se o campo de pesquisa está vazio
+  if (searchTerm === "") {
+    filmesDiv.innerHTML = ""; // Limpa a div de filmes
+    return; // Retorna imediatamente, não exibindo nenhum filme
+  }
+
+  // Filtra os filmes com base no valor de pesquisa
+  const filmesFiltrados = modeloFilmes.filter((filme) =>
+    filme.name.toLowerCase().includes(searchTerm)
+  );
+
+  // Limpa a div de filmes
+  filmesDiv.innerHTML = '';
+
+  // Adiciona os filmes filtrados à div de filmes
+  filmesFiltrados.forEach(filme => {
+    const filmeElement = document.createElement('div');
+    filmeElement.classList.add('filme-item');
+    filmeElement.innerHTML = `
+    <a href="${filme.link}"><img src="${filme.img}" alt="${filme.name}"></a>
+    `;
+    filmesDiv.appendChild(filmeElement);
+  });
+}
+
+// Registra um evento de digitação na barra de pesquisa
+searchBar.addEventListener('input', atualizarFilmes);
+
+
+
+
+const filmesDiv = c(".filmes-div");
+
+// Função para criar um elemento de filme com base no modelo
+function criarElementoFilme(filme) {
+  const modeloFilme = c(".models").cloneNode(true);
+  const modeloFilmeImg = modeloFilme.querySelector(".modelo-filme-img img");
+  const linkFilme = modeloFilme.querySelector(".link-filme");
+
+  modeloFilmeImg.src = filme.img;
+  modeloFilmeImg.alt = filme.name;
+  linkFilme.href = filme.link;
+
+  return modeloFilme;
+
+  
+}
+
+// Função para atualizar a exibição dos filmes com base no valor de pesquisa
+function atualizarFilmes() {
+  // Obtém o valor digitado na barra de pesquisa
+  const searchTerm = searchBar.value.toLowerCase();
+
+  // Verifica se o campo de pesquisa está vazio
+  if (searchTerm === "") {
+    filmesDiv.innerHTML = ""; // Limpa a div de filmes
+    return; // Retorna imediatamente, não exibindo nenhum filme
+  }
+
+  // Filtra os filmes com base no valor de pesquisa
+  const filmesFiltrados = modeloFilmes.filter((filme) =>
+    filme.name.toLowerCase().includes(searchTerm)
+  );
+
+  // Limpa a div de filmes
+  filmesDiv.innerHTML = "";
+
+  // Adiciona os filmes filtrados à div de filmes
+  filmesFiltrados.forEach((filme) => {
+    const filmeElement = criarElementoFilme(filme);
+    filmesDiv.appendChild(filmeElement);
+  });
+}
+
+// Obtém a barra de pesquisa
+const searchBar = c("#search-bar");
+
+// Adiciona o evento input à barra de pesquisa
+searchBar.addEventListener("input", atualizarFilmes);
+
+
+
+
+
+
 // codigo antigo
 
 // const c = (el) => document.querySelector(el);

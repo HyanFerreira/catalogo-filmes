@@ -25,7 +25,8 @@ body {
   width: 130px;
 }
 
-.hidden-models, .hidden-carousel {
+.hidden-models,
+.hidden-carousel {
   display: none;
 }
 
@@ -58,7 +59,7 @@ body {
 
 .main-content {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 30px;
   padding: 50px 20px;
 }
@@ -66,18 +67,18 @@ body {
 /* Carousel */
 
 .carousel-overlay {
-    width: 100%;
-    height: auto;
-    position: relative;
+  width: 100%;
+  height: auto;
+  position: relative;
 }
 
 .overlay-carousel {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, .75);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.75);
 }
 
 .carousel-container {
@@ -88,6 +89,11 @@ body {
   background-size: cover;
 }
 
+.carousel-container img {
+  width: 100%;
+  height: 100%;
+}
+
 .carousel-info {
   width: 50%;
   height: 100%;
@@ -96,12 +102,41 @@ body {
 }
 
 .carousel-info * {
-    color: white;
+  color: white;
 }
 
 .carousel-info-filmes {
-    width: 100%;
-    height: 200px;
+  width: 100%;
+  height: auto;
+}
+
+.carousel-info-filmes h1 {
+  font-size: 2.5rem;
+}
+
+.carousel-imgEtaria {
+  width: auto;
+  padding-right: 10px;
+}
+
+.carousel-category-duration {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.carousel-category {
+  padding-right: 20px;
+}
+
+.material-symbols-outlined {
+  padding-right: 5px;
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 20;
+}
+
+.carousel-synopsis {
+  font-size: 1rem;
+  text-align: justify;
 }
 
 .carousel-filme {
@@ -111,6 +146,32 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+.carousel-buttons {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.carousel-buttons {
+  padding: 50px 5px 5px 5px;
+}
+
+.carousel-buttons a {
+  background-color: #fff;
+  color: black;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: ease-in-out .2s;
+}
+
+.carousel-buttons a:hover {
+  color: white;
+  background-color: #303030;
+}
+
 
 #slider {
   position: relative;
@@ -210,6 +271,7 @@ input[type="radio"]:checked {
   background-color: black;
   transition: ease-in-out 0.3s;
   cursor: pointer;
+  box-shadow: 0 13px 26px rgba(0, 0, 0, 0.3), 0 12px 6px rgba(0, 0, 0, 0.2);
 }
 
 .modelo-filme img {
@@ -228,7 +290,7 @@ input[type="radio"]:checked {
 .hidden-modelo-filme {
   width: 200px;
   height: 300px;
-  background-color: rgb(46, 46, 46);
+  background-color: rgba(255, 255, 255, .75);
   position: absolute;
   z-index: 1;
   top: 0;
@@ -236,6 +298,7 @@ input[type="radio"]:checked {
   opacity: 0;
   visibility: hidden;
   transition: ease-in-out 0.3s;
+  box-shadow: 0 13px 26px rgba(0, 0, 0, 0.3), 0 12px 6px rgba(0, 0, 0, 0.2);
 }
 
 .hide-modelo-filme-container {
@@ -246,10 +309,10 @@ input[type="radio"]:checked {
   justify-content: space-between;
   align-items: center;
   padding: 15px;
-}
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;}
 
 .hide-modelo-filme-container * {
-  color: white;
+  color: rgb(0, 0, 0);
 }
 
 .hide-modelo-filme-info {
@@ -258,33 +321,34 @@ input[type="radio"]:checked {
 }
 
 .hide-modelo-filme-info h1 {
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   font-weight: bolder;
 }
 
 .category-duration {
   display: flex;
   justify-content: space-between;
-  padding: 10px 0;
+  padding: 6px 0;
   font-size: 0.8rem;
 }
 
 .synopsis {
+  max-height: 130px;
+  overflow: hidden;
   font-size: 0.8rem;
 }
 
 #btnTrailer {
-  padding: 6px 10px;
-  border: 0;
-  border-radius: 8px;
-  background-color: rgb(154, 18, 18);
-  color: black;
-  cursor: pointer;
-  transition: ease-in-out 0.2s;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #303030;
+  font-size: .9rem;
+  transition: ease-in-out .2s;
 }
 
 #btnTrailer:hover {
-  transform: scale(1.05);
+  color: white;
+  background-color: #303030;
 }
 
 .models:hover .modelo-filme.translate {
@@ -308,6 +372,36 @@ input[type="radio"]:checked {
   background-color: rgba(0, 0, 0, 0.75);
 }
 
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+.button-back * {
+  padding: 0;
+}
+
+.button-back {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+#btnBack {
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 10px;
+  color: white;
+  border: 0;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .card-trailer {
   width: 100%;
   height: 100vh;
@@ -317,7 +411,124 @@ input[type="radio"]:checked {
 }
 
 .card-trailer-container {
-  width: 800px;
-  height: 500px;
+  display: flex;
+  width: 900px;
+  height: 450px;
   background-color: rgba(255, 255, 255, 0.75);
+}
+
+.card-trailer-poster {
+  width: 300px;
+  height: 100%;
+}
+
+.card-trailer-info {
+  width: 600px;
+  padding: 20px;
+}
+
+.card-category-duration {
+  display: flex;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.card-category {
+  padding-right: 20px;
+}
+
+.card-carousel-imgEtaria {
+  width: auto;
+  padding-right: 10px;
+}
+
+.card-synopsis {
+  text-align: justify;
+}
+
+.card-trailer-poster img {
+  width: 100%;
+  height: 100%;
+}
+
+.card-info-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-buttons {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.card-buttons {
+  padding: 25px;
+}
+
+.card-buttons a {
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: 1px solid #303030;
+  font-size: 1rem;
+  transition: ease-in-out .2s;
+}
+
+.card-buttons a:hover {
+  color: white;
+  background-color: #303030;
+}
+
+.filmes-div {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+}
+
+.filmes-div div {
+  width: 200px;
+  height: 300px;
+}
+
+.filmes-div div img {
+  width: 100%;
+  height: auto;
+}
+
+.search-area {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0 0 0;
+}
+
+.search {
+  width: 300px;
+  border-radius: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 8px 0;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.search input {
+  padding: 10px 70px 10px 5px;
+  border: 0;
+  outline: none;
+  font-size: .8rem;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
 }
