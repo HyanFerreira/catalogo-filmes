@@ -507,6 +507,31 @@ input[type="radio"]:checked {
   padding: 50px 0 0 0;
 }
 
+.search-area-display {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+
+.marvel-dc {
+  width: 425px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  justify-content: flex-end;
+}
+
+.marvel img {
+  height: 70px;
+}
+
+.pixar-dream-works {
+  display: flex;
+  gap: 25px;
+}
+
 .search {
   width: 300px;
   border-radius: 60px;
@@ -531,4 +556,20 @@ input[type="radio"]:checked {
   'wght' 400,
   'GRAD' 0,
   'opsz' 48
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
