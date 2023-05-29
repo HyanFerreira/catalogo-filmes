@@ -336,6 +336,7 @@ input[type="radio"]:checked {
   max-height: 130px;
   overflow: hidden;
   font-size: 0.8rem;
+  position: relative;
 }
 
 #btnTrailer {
